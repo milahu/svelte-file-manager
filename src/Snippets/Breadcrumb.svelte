@@ -42,7 +42,6 @@
 
 <div class="hide-xs">
     <!-- svelte-ignore a11y-missing-attribute -->
-    📍
     {#if path.length > 0}
         <a on:click={goto(-1)} class="font-w300 cursor-pointer"><u><i>root</i></u></a>
     {/if}&nbsp;/&nbsp;

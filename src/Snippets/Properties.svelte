@@ -144,7 +144,7 @@
 
 <div class="modal shadow-1 white rounded-3 modal-bouncing" id="modal-properties">
     <div class="modal-header ellipsis">
-        <img alt={item.icon[0]} src="icons/48x48/{item.icon[0]}.svg"/>&nbsp;{item.name}
+        <img class="darkmode-invert" alt={item.icon[0]} src={item.icon[0]}/>&nbsp;{item.name}
     </div>
     <div class="modal-content container">
         <p class="ellipsis"><b>File name:</b> <span title={item.name}>{item.name}</span></p>

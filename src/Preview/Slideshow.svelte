@@ -192,7 +192,7 @@
                     <TextShower url={files[fileIdx].getWS(false)} file={files[fileIdx]}/>
                 </div>
             {:else if isMimeTypeImage(files[fileIdx].mimeType)}
-                <img alt={files[fileIdx].name} title={files[fileIdx].name} draggable="false"
+                <img class:darkmode-invert={true} alt={files[fileIdx].name} title={files[fileIdx].name} draggable="false"
                      ondragstart="return false;" class="centered-slide centered-maxscreen cursor-zoom-in"
                      src={files[fileIdx].getWS(false)} on:click={stepMode}/>
             {:else if isMimeTypeVideo(files[fileIdx].mimeType)}
@@ -214,8 +214,8 @@
                        src={files[fileIdx].getWS(false)}/>
             {/if}
         {:else}
-            <img class="centered-slide" alt={files[fileIdx].icon[0]} draggable="false" ondragstart="return false;"
-                 src="icons/48x48/{files[fileIdx].icon[0]}.svg"/>
+            <img class="darkmode-invert centered-slide" alt={files[fileIdx].icon[0]} draggable="false" ondragstart="return false;"
+                 src={files[fileIdx].icon[0]}/>
         {/if}
         <div class="caption ellipsis" title={files[fileIdx].name}>{files[fileIdx].name}</div>
     </div>

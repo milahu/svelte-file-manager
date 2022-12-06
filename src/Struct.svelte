@@ -108,12 +108,12 @@
             this.name = name + (this.isDir ? "/" : "");
             this.size = formatBytes(size);
             this.numSize = size;
-            this.chDate = new Date(chDate * 1000).toLocaleString();
+            this.chDate = new Date(chDate * 1000).toLocaleString("af");
             this.numChDate = chDate;
             this.owner = owner;
             this.group = group;
             this.permissions = permissions;
-            this.path = path.join("") + this.name;
+            this.path = (path.length ? ("/" + path.join("/")) : "") + "/" + this.name;
 
             // Adapted from
             // https://stackoverflow.com/questions/15900485/correct-way-to-convert-size-in-bytes-to-kb-mb-gb-in-javascript
@@ -186,12 +186,15 @@
                     this.files.push(nf);
                 }
             }
+            /*
+            // add ".." parent dir
             if (path.length > 0) {
                 // Is not root
                 this.items.unshift(
                     new File(false, "#directory", "..", -1, 0, "--", "--", "--", path)
                 );
             }
+            */
         }
 
         sort(sorter: (f1: File, f2: File) => number): Mule {

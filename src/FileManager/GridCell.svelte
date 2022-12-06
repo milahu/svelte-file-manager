@@ -40,14 +40,14 @@
         <div style="clear: both;">&nbsp;</div>
         <div class="text-center">
             {#if !!item.icon[1]}
-                <img alt={item.icon[0]} src="icons/48x48/{item.icon[0]}.svg" style="position: relative; left: 12px"/>
+                <img class="darkmode-invert" alt={item.icon[0]} src={item.icon[0]} style="position: relative; left: 12px"/>
                 {#if item.icon[1] == "link"}
                     <IconLink size="22"/>
                 {:else}
                     <IconInvalidLink size="22"/>
                 {/if}
             {:else}
-                <img alt={item.icon[0]} src="icons/48x48/{item.icon[0]}.svg"/>
+                <img class="darkmode-invert" alt={item.icon[0]} src={item.icon[0]}/>
             {/if}
         </div>
         <div>&nbsp;</div>

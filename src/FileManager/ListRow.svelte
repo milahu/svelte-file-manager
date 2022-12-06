@@ -60,11 +60,11 @@
 <tr>
     <td class="cursor-pointer nowrap minWid50Percent" on:click={click(item.uuid)}>
         <div class="wid220 ellipsis hide-md-up">
-            <img alt={item.icon[0]} class="txt-mid" src="icons/16x16/{item.icon[0]}.svg"/>&nbsp;<span
+            <img class="darkmode-invert txt-mid" alt={item.icon[0]} src={item.icon[0]}/>&nbsp;<span
                 class="txt-mid">{item.icon[2]}{item.name}</span>
         </div>
         <div class="hide-sm-down">
-            <img alt={item.icon[0]} class="txt-mid" src="icons/16x16/{item.icon[0]}.svg"/>&nbsp;<span
+            <img class="darkmode-invert txt-mid" alt={item.icon[0]} src={item.icon[0]}/>&nbsp;<span
                 class="txt-mid">{item.icon[2]}{item.name}</span>
         </div>
     </td>

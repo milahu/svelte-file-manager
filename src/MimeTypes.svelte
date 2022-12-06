@@ -47,16 +47,21 @@
     }
 
     export function getIcon(mimeType: string, isLink: boolean): string[] {
-        const icon: string =
-            mimeType == "#directory" ? "file-manager"
-                : isMimeTypeImage(mimeType) ? "image-x-generic"
-                    : isMimeTypeVideo(mimeType) ? "video-x-generic"
-                        : isMimeTypeAudio(mimeType) ? "audio-x-generic"
-                            : isMimeTypeText(mimeType) ? "text-x-generic"
-                                : isMimeTypePDF(mimeType) ? "application-pdf"
-                                    : "application-octet-stream"; // this is also for links
-        return mimeType == "#unresolved" ? [icon, "invalidLink", "🔗 "]
-            : isLink ? [icon, "link", "🔗 "]
-                : [icon, null, ""];
+        // quick and dirty
+        const icons: Record<string, string> = globalThis.icons;
+        const icon: string = icons[
+            mimeType == "#directory" ? "directory" :
+            isMimeTypeImage(mimeType) ? "file-image" :
+            isMimeTypeVideo(mimeType) ? "file-video" :
+            isMimeTypeAudio(mimeType) ? "file-audio" :
+            isMimeTypeText(mimeType) ? "file-text" :
+            isMimeTypePDF(mimeType) ? "file-pdf" :
+            "file" // default. also symlinks
+        ];
+        return (
+            mimeType == "#unresolved" ? [icon, "invalidLink", "🔗 "] :
+            isLink ? [icon, "link", "🔗 "] :
+            [icon, null, ""]
+        );
     }
 </script>

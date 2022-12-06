@@ -19,13 +19,17 @@
     import {onMount} from "svelte";
     import type {File} from "../Struct.svelte";
 
+    // @ts-ignore Property 'fs' does not exist on type
+    const fs: typeof import("fs") = globalThis.fs;
+
     export let url: string;
     export let file: File;
 
     $: contents = "";
 
     onMount(async () => {
-        contents = await (await fetch(url)).text();
+        //contents = await (await fetch(url)).text();
+        contents = await fs.promises.readFile(file.path, 'utf8');
     });
 </script>
 
